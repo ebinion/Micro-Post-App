@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="span12">
+    <h1>Create a new user</h1>
+    <%= form_tag '/users', :class => "form-horizontal" do %>
+    <fieldset>
+      <legend>Enter your information below.</legend>
+      <div class="control-group">
+        <%= label_tag "name", "your name", :class => "control-label" %>
+        <div class="controls">
+          <%= text_field_tag "name" , nil, :class => "input-xlarge", :placeholder => "first and last name" %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= label_tag "email", "your email", :class => "control-label" %>
+        <div class="controls">
+          <%= text_field_tag "email", nil, :class=> "input-xlarge", :placeholder => "e.g. john.doe@gmail.com" %>
+        </div>
+      </div>
+    </fieldset>
+    <div class="form-actions">
+      <%= button_tag "Cancel", :type => 'button', :class => "btn" %>
+      <%= submit_tag "Create New User", :class =>"btn btn-primary" %>
+    </div>
+    <% end %>
+  </div>
+</div>

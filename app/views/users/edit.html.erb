@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="span12">
+    <h1>Update user profile</h1>
+    <%= form_tag "/users/#{params[:id]}", :class => "form-horizontal" do %>
+    <fieldset>
+      <legend>Enter your information below.</legend>
+      <div class="control-group">
+        <%= label_tag "name", "your name", :class => "control-label" %>
+        <div class="controls">
+          <%= text_field_tag "name" , @user.name, :class => "input-xlarge", :placeholder => "first and last name" %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= label_tag "email", "your email", :class => "control-label" %>
+        <div class="controls">
+          <%= text_field_tag "email", @user.email, :class=> "input-xlarge", :placeholder => "e.g. john.doe@gmail.com" %>
+        </div>
+      </div>
+    </fieldset>
+    <div class="form-actions">
+      <%= button_tag "Cancel", :type => 'button', :class => "btn" %>
+      <%= submit_tag "Update Profile", :class =>"btn btn-primary" %>
+    </div>
+    <% end %>
+  </div>
+</div>
